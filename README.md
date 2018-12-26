@@ -1,4 +1,15 @@
+
+# Lunch & Learn: Land Cover Classifier
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+To create the project with all required libs, run:
+
+`create-react-app lcc`
+
+
+
+******
 
 ## Available Scripts
 
