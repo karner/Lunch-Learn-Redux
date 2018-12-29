@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ClassificationComponent style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '10'}} />
+        <ClassificationComponent style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '10', pointerEvents: 'none'}} />
         <Map style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '-1000'}} />
       </div>
     );
