@@ -1,4 +1,3 @@
-
 const login = async (email, passwordMD5) => {
     const param = {
         username: email,
@@ -13,11 +12,14 @@ const login = async (email, passwordMD5) => {
         body: "parameter=" + JSON.stringify(param),
     });
     try {
+        console.log("Got response");
         const responseJson = await response.json();
+        console.log("Got response json");
         if (responseJson.userID === null) {
             console.log("Wrong login data! Please try again...");
             return null;
         }
+        console.log("Login successful!");
         return responseJson;
     } catch (error) {
         console.error(`Error is : ${error}`);

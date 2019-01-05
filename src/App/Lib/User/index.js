@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Heading } from 'evergreen-ui';
+import { Card } from 'evergreen-ui';
 
 import Login from './Login';
 import Logout from './Logout';

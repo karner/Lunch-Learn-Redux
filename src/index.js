@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App/Containers/App';
 import * as serviceWorker from './serviceWorker';
+import './App/Config/ReactotronConfig'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

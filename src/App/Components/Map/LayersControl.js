@@ -40,7 +40,7 @@ export default class Map extends React.Component {
             <BaseLayer  name='Google Maps Satellite'>
                 <GoogleLayer googlekey={google_key} maptype={google_satellite} />
             </BaseLayer>
-                <BaseLayer  name='Google Maps Hydrid'>
+                <BaseLayer  name='Google Maps Hybrid'>
                 <GoogleLayer googlekey={google_key} maptype={google_hybrid} />
             </BaseLayer>  
             <BaseLayer  name='Google Maps with Libraries'>

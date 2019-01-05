@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Heading } from 'evergreen-ui';
-import UserComponent from '../User';
+import UserComponent from '../../Lib/User';
 import Classification  from "./Classification";
 
 class ClassificationComponent extends Component {
