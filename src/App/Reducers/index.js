@@ -3,6 +3,9 @@ import { combineReducers } from "redux";
 import root from "../Sagas";
 import configureStore from "./CreateStore";
 
+import { User as UserReducer } from "../Lib/User/Reducers"
+
+
 export const reducers = combineReducers({
     user: UserReducer,
     legend: LegendReducer,

@@ -1,0 +1,4 @@
+export const SEND_LOGIN = 'USER_SEND_LOGIN';
+export const LOGOUT = 'USER_LOGOUT';
+export const LOGIN_SUCCESSFUL = 'USER_LOGIN_SUCCESSFUL';
+export const LOGIN_FAILED = 'USER_LOGIN_FAILED';

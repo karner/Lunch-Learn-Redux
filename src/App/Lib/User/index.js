@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Card } from 'evergreen-ui';
 
 import Login from './Login';
@@ -17,4 +18,14 @@ class UserComponent extends Component {
   }
 }
 
-export default UserComponent;
+const mapStateToProps = (state) => {
+  return {
+    value: state.test.value,
+  };
+};
+
+const mapDispatchToProps = ({
+  updateValue: TestActions.updateValue,
+});
+
+export default connect()(UserComponent);
