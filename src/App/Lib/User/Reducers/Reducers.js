@@ -1,9 +1,9 @@
-import { SEND_LOGIN, LOGOUT, LOGIN_SUCCESSFUL, LOGIN_FAILED } from './ActionTypes';
+import { SEND_LOGIN, LOGOUT, LOGIN_SUCCESSFUL, LOGIN_FAILED } from "./ActionTypes";
 
 const initialState = {
-    loggedIn: false,
+    loggedIn: true,
     userId: undefined,
-    userName: undefined,
+    userName: "Jim",
     email: undefined,
     passwordHash: undefined,
     awaitingLoginResponse: false,
@@ -24,6 +24,7 @@ const User = (state = initialState, action) => {
         case LOGIN_FAILED:
             state = initialState;
             state.logintemptFailed = true;
+            state.awaitingLoginResponse = false;
             break;
         case LOGIN_SUCCESSFUL:
             state.loggedIn = true;

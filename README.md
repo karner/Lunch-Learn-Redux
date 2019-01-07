@@ -8,8 +8,7 @@ To create the project with all required libs, run:
 ```
 create-react-app lcc
 cd lcc
-yarn add leaflet react-leaflet google-maps react-leaflet-google react-leaflet-bing redux redux-persist redux-saga evergreen-ui apisauce
-yarn add reactotron-react-js reactotron-redux reactotron-redux-saga -D
+yarn add leaflet react-leaflet prop-types google-maps react-leaflet-google react-leaflet-bing redux react-redux redux-persist redux-saga evergreen-ui apisauce
 yarn start
 ```
 

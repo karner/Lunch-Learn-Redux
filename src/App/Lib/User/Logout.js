@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import { Button, Heading, Icon, Text } from 'evergreen-ui';
+import { connect } from "react-redux";
+import { Button, Heading, Text } from 'evergreen-ui';
 
-class Login extends Component {
+class Logout extends Component {
   render() {
     return (
       <div style={this.props.style}>
         <Heading>Logout</Heading>
-        <Text>Hi username!</Text>
+        <Text>Hi {this.props.userName}!</Text>
         <br/>
-        <Button>
+        <Button iconBefore='log-out' >
             <Text>Logout </Text>
-            <Icon icon='log-out' />
         </Button>
       </div>
     );
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    userName: state.user.userName,
+  };
+};
+
+export default connect(mapStateToProps)(Logout);

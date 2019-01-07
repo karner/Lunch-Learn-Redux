@@ -10,8 +10,9 @@ class UserComponent extends Component {
     return (
       <div style={this.props.style}>
           <Card background='white' padding='16px' marginRight='32px' width='250px' pointerEvents='auto' float='right'>
-            <Login />
-            <Logout />
+            {
+              (this.props.loggedIn) ? <Logout/> : <Login/>
+            }            
           </Card>
       </div>
     );
@@ -20,12 +21,12 @@ class UserComponent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    value: state.test.value,
+    loggedIn: state.user.loggedIn,
   };
 };
 
 const mapDispatchToProps = ({
-  updateValue: TestActions.updateValue,
+  //updateValue: TestActions.updateValue,
 });
 
-export default connect()(UserComponent);
+export default connect(mapStateToProps)(UserComponent);
