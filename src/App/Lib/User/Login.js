@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Heading, Text, TextInput } from 'evergreen-ui';
 import login from '../GeoWikiAPI/User';
+//import { hex_md5 as md5 } from '../../Transforms/MD5';
 
 class Login extends Component {
   constructor() {
