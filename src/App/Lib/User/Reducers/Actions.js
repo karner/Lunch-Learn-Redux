@@ -1,30 +1,30 @@
 import * as ActionTypes from './ActionTypes';
 
-const SendLogin = (dispatch, email, passwordHash) => {
-    dispatch({
+export const SendLogin = (email, passwordHash) => {
+    return {
         type:ActionTypes.SEND_LOGIN, 
         email, 
         passwordHash
-    });
+    };
 };
 
-const Logout = dispatch => {
-    dispatch({
+export const Logout = () => {
+    return {
         type: ActionTypes.LOGOUT
-    });
+    };
 };
 
-const LoginSuccessful = (dispatch, userId, userName) => {
-    dispatch({
+export const LoginSuccessful = (userId, userName) => {
+    return {
         type: ActionTypes.LOGIN_SUCCESSFUL,
         userId,
         userName
-    });
+    };
 };
 
-const LoginFailed = dispatch => {
-    dispatch({
+export const LoginFailed = () => {
+    return {
         type: ActionTypes.LOGIN_FAILED
-    });
+    };
 };
 

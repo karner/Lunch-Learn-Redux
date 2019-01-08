@@ -1,16 +1,16 @@
 import { put } from "redux-saga/effects";
-import { sendLogin as SendLogin } from "../../GeoWikiAPI/User";
-import { userSuccess, userFailure } from "../Reducers/Actions";
+import login from "../../GeoWikiAPI/User";
+import { LoginSuccessful, LoginFailed } from "../Reducers/Actions";
 
 export function * sendLogin(action) {
   const email = action.email;
   const passwordHash = action.passwordHash;
   
-  const response = yield SendLogin(email, passwordHash);
+  const response = yield login(email, passwordHash);
 
   if (response !== undefined) {
-    yield put(userSuccess({response}));
+    yield put(LoginSuccessful({response}));
   } else {
-    yield put(userFailure());
+    yield put(LoginFailed());
   }
 }

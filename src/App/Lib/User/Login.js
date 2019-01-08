@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Button, Heading, Text, TextInput } from 'evergreen-ui';
-import login from '../GeoWikiAPI/User';
-//import { hex_md5 as md5 } from '../../Transforms/MD5';
+import { SendLogin } from "./Reducers/Actions";
+import { hex_md5 as md5 } from '../../Transforms/MD5';
 
 class Login extends Component {
   constructor() {
@@ -13,7 +14,7 @@ class Login extends Component {
   }
 
   login = () => {
-    login(this.state.email, this.state.password);
+    this.props.sendLogin(this.state.email, md5(this.state.password));
   };
 
   updateEmail = (email) => {
@@ -38,4 +39,10 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  sendLogin: (email, passwordHash) => {
+    dispatch(SendLogin(email, passwordHash));
+  }
+});
+
+export default connect(mapDispatchToProps)(Login);

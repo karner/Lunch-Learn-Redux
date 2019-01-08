@@ -13,8 +13,7 @@
  * Configurable variables. You may need to tweak these to be compatible with
  * the server-side, but the defaults work in most cases.
  */
-let hexcase = 0;   /* hex output format. 0 - lowercase; 1 - uppercase        */
-let b64pad  = "";  /* base-64 pad character. "=" for strict RFC compliance   */
+
 
 /*
  * These are the functions you'll usually want to call
@@ -70,7 +69,7 @@ const rstr_hmac_md5 = (key, data) =>
  */
 const rstr2hex = (input) =>
 {
-  try { hexcase } catch(e) { hexcase=0; }
+  let hexcase = 0; /* hex output format. 0 - lowercase; 1 - uppercase        */
   var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
   var output = "";
   var x;
@@ -88,7 +87,7 @@ const rstr2hex = (input) =>
  */
 const rstr2b64 = (input) =>
 {
-  try { b64pad } catch(e) { b64pad=''; }
+  let b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
   var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
   var output = "";
   var len = input.length;

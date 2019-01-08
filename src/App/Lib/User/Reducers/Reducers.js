@@ -1,9 +1,9 @@
 import { SEND_LOGIN, LOGOUT, LOGIN_SUCCESSFUL, LOGIN_FAILED } from "./ActionTypes";
 
 const initialState = {
-    loggedIn: true,
+    loggedIn: false,
     userId: undefined,
-    userName: "Jim",
+    userName: "",
     email: undefined,
     passwordHash: undefined,
     awaitingLoginResponse: false,
