@@ -5,14 +5,6 @@ import { BingLayer } from 'react-leaflet-bing';
 
 
 export default class Map extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-    //   geodata: null,
-    //   isadded: false
-    }
-  }
-  
   render (){
     const { BaseLayer } = LayersControl;
 
@@ -58,5 +50,4 @@ export default class Map extends React.Component {
         </LayersControl>
     );
   }
-
 }

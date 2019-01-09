@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
-import Map from '../../Components/Map';
-import ClassificationComponent from '../Classification';
+import Map from '../../Lib/Map';
+import AppUI from '../AppUI';
 import REDUX_PERSIST from "../../Config/ReduxPersist";
 import createStore from "../../Reducers";
-import './App.css';
+import '../../Themes/theme.css';
 
 const store = createStore();
 
@@ -14,7 +14,7 @@ class App extends Component {
     persistStore(
       store,
       REDUX_PERSIST.storeConfig,
-      () => { this.setState({isLoading: false}); },
+      () => { this.setState({isLoading: false}); }
     );
   }
 
@@ -22,12 +22,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <ClassificationComponent style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '10', pointerEvents: 'none'}} />
-          <Map style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '-1000'}} />
+          <AppUI className="AppUI" />
+          <Map className="Map" />
         </div>
       </Provider>
     );
   }
 }
 
+export {store};
 export default App;

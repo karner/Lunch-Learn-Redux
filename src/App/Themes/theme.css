@@ -16,3 +16,22 @@
 .App-link {
   color: #61dafb;
 }
+
+.Map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1000;
+}
+
+.AppUI {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  pointer-events: none
+}

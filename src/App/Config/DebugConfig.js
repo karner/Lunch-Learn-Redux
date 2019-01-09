@@ -1,5 +1,4 @@
-
- const __DEV__ = true
+const __DEV__ = true;
 
 export default {
   useFixtures: false,

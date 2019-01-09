@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Card, Heading } from 'evergreen-ui';
-import UserComponent from '../../Lib/User';
-import Classification  from "./Classification";
+import UserComponent from '../../Components/User';
+import Classification  from "../../Components/Classification";
+import "../../Themes/theme.css";
 
-class ClassificationComponent extends Component {
+class AppUI extends Component {
   render() {
     return (
-      <div style={this.props.style}>
+      <div style={this.props.style} className='this.props.className' children>
           <Card background='white' padding='16px' marginTop='32px' marginLeft='auto' marginRight='auto' width='120px'>
             <Heading>Land Cover Classifier</Heading>
           </Card>
@@ -17,4 +18,4 @@ class ClassificationComponent extends Component {
   }
 }
 
-export default ClassificationComponent;
+export default AppUI;

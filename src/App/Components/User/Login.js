@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { Button, Heading, Text, TextInput } from 'evergreen-ui';
-import { SendLogin } from "./Reducers/Actions";
+import { connect } from 'react-redux';
+import {
+  Button, Heading, Text, TextInput,
+} from 'evergreen-ui';
+import { SendLogin } from './Reducers/Actions';
 import { hex_md5 as md5 } from '../../Transforms/MD5';
 
 class Login extends Component {
@@ -10,20 +12,22 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-    }
+    };
+  }
+
+  updateEmail = (email) => {
+    this.setState({ email });
   }
 
   login = () => {
-    this.props.sendLogin(this.state.email, md5(this.state.password));
-  };
+    const { email, password } = this.state;
+    const passwordHash = md5(password);
+    this.props.sendLogin(email, passwordHash);
+  }
 
-  updateEmail = (email) => {
-    this.setState({email: email});
-  };
-
-  updatePassword = (password) => {
-    this.setState({password: password});
-  };
+  updatePassword(password) {
+    this.setState({ password });
+  }
 
   render() {
     return (
@@ -39,10 +43,17 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    awaitingLoginResponse: state.user.awaitingLoginResponse,
+    loginFailed: state.user.loginAttemptFailed,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => ({
   sendLogin: (email, passwordHash) => {
     dispatch(SendLogin(email, passwordHash));
   }
 });
 
-export default connect(mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

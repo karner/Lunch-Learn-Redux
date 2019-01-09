@@ -25,8 +25,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = ({
-  //updateValue: TestActions.updateValue,
-});
-
 export default connect(mapStateToProps)(UserComponent);

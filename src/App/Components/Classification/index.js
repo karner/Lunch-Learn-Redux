@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Card, Combobox, Heading } from 'evergreen-ui';
+import { RefreshLegends } from './Legends/Reducers/Actions';
 
 class Classification extends Component {
+  componentDidMount() {
+    this.props.getLegends();
+  }
+
   render() {
     return (
       <div style={this.props.style}>
@@ -14,4 +20,16 @@ class Classification extends Component {
   }
 }
 
-export default Classification;
+const mapStateToProps = (state) => {
+  return {
+    legends: state.legends.legends,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getLegends: () => {
+    dispatch(RefreshLegends());
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Classification);
