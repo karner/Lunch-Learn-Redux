@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  Button, Heading, Text, TextInput,
+  Button, Heading, Icon, Text, TextInput,
 } from 'evergreen-ui';
 import { SendLogin } from './Reducers/Actions';
 import { hex_md5 as md5 } from '../../Transforms/MD5';
@@ -35,9 +35,15 @@ class Login extends Component {
         <Heading>Login</Heading>
         <TextInput width='200px' onChange={(event)=>this.updateEmail(event.target.value)}/>
         <TextInput width='200px' type='password' onChange={(event)=>this.updatePassword(event.target.value)}/>
-        <Button iconBefore='log-in' onClick={this.login}>
+        <Button 
+          iconBefore={(this.props.awaitingLoginResponse != null && this.props.awaitingLoginResponse === true )?'refresh':'log-in'} 
+          onClick={this.login}>
             <Text>Login</Text>
         </Button>
+        <div hidden={this.props.loginFailed === false} >
+          <Icon icon="error" color="danger" />
+          <Text>Login failed...</Text>
+        </div>
       </div>
     );
   }

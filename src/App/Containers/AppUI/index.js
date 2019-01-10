@@ -7,7 +7,7 @@ import "../../Themes/theme.css";
 class AppUI extends Component {
   render() {
     return (
-      <div style={this.props.style} className='this.props.className' children>
+      <div style={this.props.style} className={this.props.className} children>
           <Card background='white' padding='16px' marginTop='32px' marginLeft='auto' marginRight='auto' width='120px'>
             <Heading>Geo-Wiki Lite</Heading>
           </Card>

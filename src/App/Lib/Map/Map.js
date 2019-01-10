@@ -16,7 +16,7 @@ export default class Map extends React.Component {
 
   render() {
     return (        
-        <LeafletMap center={this.state.mapCenter} zoom={this.state.zoomLevel} zoomControl={true} style={this.props.style} className={this.props.className} children>
+        <LeafletMap center={this.state.mapCenter} zoom={this.state.zoomLevel} zoomControl={false} style={this.props.style} className={this.props.className} children>
           <LayersControl />
         </LeafletMap>
     )

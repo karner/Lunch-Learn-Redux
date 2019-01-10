@@ -21,14 +21,17 @@ const User = (state = initialState, action) => {
       newState.awaitingLoginResponse = true;
       newState.loginAttemptFailed = false;
       break;
+
     case LOGOUT:
       newState = initialState;
       break;
+
     case LOGIN_FAILED:
       newState = {...initialState};
-      newState.logintemptFailed = true;
+      newState.loginAttemptFailed = true;
       newState.awaitingLoginResponse = false;
       break;
+
     case LOGIN_SUCCESSFUL:
       newState.loggedIn = true;
       newState.userId = action.userId;
@@ -36,6 +39,7 @@ const User = (state = initialState, action) => {
       newState.awaitingLoginResponse = false;
       newState.loginAttemptFailed = false;
       break;
+
     default:
       return newState;
   }

@@ -22,9 +22,9 @@ const login = async (email, passwordMD5) => {
     if (responseJson.userID === null) {
       console.log("Wrong login data! Please try again...");
       userInformation = null;
-    }
-    console.log("Login successful!");
+    } else {
     userInformation = responseJson;
+    }
   } catch (error) {
     console.error(`Error is : ${error}`);
   }
