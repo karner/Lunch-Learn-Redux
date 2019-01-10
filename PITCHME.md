@@ -55,7 +55,7 @@ It complements React's composable view components by utilizing a unidirectional 
 
 ## Three principles of Redux
 
-1. **Single source of truth**
+### 1. Single source of truth
 
 The [**state**](https://redux.js.org/glossary#state) of your whole application is stored in an object tree within a single [**store**](https://redux.js.org/glossary#store)**.**
 
@@ -63,15 +63,17 @@ The [**state**](https://redux.js.org/glossary#state) of your whole application i
 
 ## Three principles of Redux
 
-2. **State is read-only**
+### 2. State is read-only
 
 The only way to change the state is to emit an [**action**](https://redux.js.org/glossary#action), an object describing what happened.
+
+(It's also immutable)
 
 ---
 
 ## Three principles of Redux
 
-3. **Changes are made with pure functions**
+### 3. Changes are made with pure functions
 
 To specify how the state tree is transformed by actions, you write pure [**reducers**](https://redux.js.org/glossary#reducer)**.**
 
@@ -82,6 +84,12 @@ To specify how the state tree is transformed by actions, you write pure [**reduc
 Redux architecture revolves around a **strict unidirectional data flow**.
 
 ![Redux data flow](https://jrsinclair.com/assets/redux-flow.png)
+
+---
+
+## How to handle async
+
+How could a login request look using the unidirectional data flow?
 
 ---
 
