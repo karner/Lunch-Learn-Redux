@@ -10,6 +10,7 @@
 - Motivation
 - Principles of Redux
 - Look at some code
+- Components
 
 ---
 
