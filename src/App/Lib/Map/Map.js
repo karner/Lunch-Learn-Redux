@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map as LeafletMap } from 'react-leaflet';
+import { Map as LeafletMap, WMSTileLayer } from 'react-leaflet';
 import LayersControl from './LayersControl';
 import "../../Themes/theme.css";
 import "../../Themes/leaflet.css";

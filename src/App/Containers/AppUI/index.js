@@ -9,7 +9,7 @@ class AppUI extends Component {
     return (
       <div style={this.props.style} className='this.props.className' children>
           <Card background='white' padding='16px' marginTop='32px' marginLeft='auto' marginRight='auto' width='120px'>
-            <Heading>Land Cover Classifier</Heading>
+            <Heading>Geo-Wiki Lite</Heading>
           </Card>
           <UserComponent />
           <Classification />

@@ -1,12 +1,12 @@
 import React from 'react';
-import { TileLayer, LayersControl } from 'react-leaflet'
+import { TileLayer, LayersControl, WMSTileLayer } from 'react-leaflet'
 import { GoogleLayer } from 'react-leaflet-google';
 import { BingLayer } from 'react-leaflet-bing';
 
 
 export default class Map extends React.Component {
   render (){
-    const { BaseLayer } = LayersControl;
+    const { BaseLayer, Overlay } = LayersControl;
 
     const google_terrain = 'TERRAIN';
     const google_road = 'ROADMAP';
@@ -47,6 +47,15 @@ export default class Map extends React.Component {
             <BaseLayer checked name='Bing Maps Satelite with Labels'>
                 <BingLayer  bingkey={bing_key} type="AerialWithLabels" />
             </BaseLayer>
+            
+            <Overlay checked name='MODIS v5'>
+                <WMSTileLayer 
+                    layers='MODIS_V5'
+                    url="https://wms.geo-wiki.org/cgi-bin/landcoverwms"
+                    format="image/png"
+                    opacity="0.5"/>
+            </Overlay>
+            
         </LayersControl>
     );
   }
