@@ -19,6 +19,7 @@
 Redux is trying to solve issues with current MVC/MVVM approaches.
 
 ---
+---
 
 ### Issues
 
@@ -37,6 +38,7 @@ This complexity is difficult to handle as **we're mixing two concepts** that are
 - UI state
 - Navigation
 
+---
 ---
 
 ## Things we should also do
