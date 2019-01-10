@@ -4,7 +4,6 @@
 ## Handling global state with Redux
 
 ---
----
 
 ## Objectives
 
@@ -18,7 +17,6 @@
 
 Redux is trying to solve issues with current MVC/MVVM approaches.
 
----
 ---
 
 ### Issues
@@ -39,7 +37,6 @@ This complexity is difficult to handle as **we're mixing two concepts** that are
 - Navigation
 
 ---
----
 
 ## Things we should also do
 
@@ -47,6 +44,8 @@ This complexity is difficult to handle as **we're mixing two concepts** that are
 - Fetching data before navigating
 
 ---
+
+## What is Redux
 
 Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. 
 
@@ -59,9 +58,19 @@ It complements React's composable view components by utilizing a unidirectional 
 1. **Single source of truth**
 
 The [**state**](https://redux.js.org/glossary#state) of your whole application is stored in an object tree within a single [**store**](https://redux.js.org/glossary#store)**.**
+
+---
+
+## Three principles of Redux
+
 2. **State is read-only**
 
 The only way to change the state is to emit an [**action**](https://redux.js.org/glossary#action), an object describing what happened.
+
+---
+
+## Three principles of Redux
+
 3. **Changes are made with pure functions**
 
 To specify how the state tree is transformed by actions, you write pure [**reducers**](https://redux.js.org/glossary#reducer)**.**
