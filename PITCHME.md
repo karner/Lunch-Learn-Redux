@@ -1,4 +1,43 @@
-# Lunch & Learn: Handling global state with Redux
+
+# Lunch & Learn
+
+## Handling global state with Redux
+
+---
+
+## Objectives
+
+- Motivation
+- Principles of Redux
+- Look at some code
+
+---
+
+## Motivation
+
+Redux is trying to solve issues with current MVC/MVVM approaches.
+
+- Complex application state
+
+This complexity is difficult to handle as **we're mixing two concepts** that are very hard for the human mind to reason about: **mutation and asynchronicity.**
+
+---
+
+## Complex application state:
+
+- Server responses
+- Cached data
+- Sensor data
+- Locally created data that has not yet been persisted to the server
+- UI state
+- Navigation
+
+Things we should also do:
+
+- Optimistic updates
+- Fetching data before navigating
+
+---
 
 Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. 
 
@@ -20,7 +59,7 @@ Things we should also do:
 - Optimistic updates
 - Fetching data before navigating
 
-This complexity is difficult to handle as **we're mixing two concepts** that are very hard for the human mind to reason about: **mutation and asynchronicity.**
+
 
 ## Three principles of Redux
 

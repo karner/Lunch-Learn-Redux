@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Card, Combobox, Heading } from 'evergreen-ui';
 import { RefreshLegends } from './Legends/Reducers/Actions';
+import LegendItems from './LegendItems';
 
 class Classification extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedLegend: null
+    }
+  }
+
   componentDidMount() {
     this.props.getLegends();
   }
@@ -15,10 +23,10 @@ class Classification extends Component {
             <Heading>Classification</Heading>
             <Combobox
               items={this.props.legends == undefined ? [] : this.props.legends} 
-              onChange={selected => console.log(selected)}
-              itemToString={(item)=>(item == undefined)?"":item.name}
-              
+              onChange={selected => this.setState({selectedLegend: selected})}
+              itemToString={(item)=>(item == undefined)?"":item.name}              
               placeholder='Legend'/>
+            <LegendItems items={this.state.selectedLegend} />
           </Card>
       </div>
     );
