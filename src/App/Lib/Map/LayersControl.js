@@ -48,7 +48,7 @@ export default class Map extends React.Component {
                 <BingLayer  bingkey={bing_key} type="AerialWithLabels" />
             </BaseLayer>
             
-            <Overlay checked name='MODIS v5'>
+            <Overlay name='MODIS v5'>
                 <WMSTileLayer 
                     layers='MODIS_V5'
                     url="https://wms.geo-wiki.org/cgi-bin/landcoverwms"
