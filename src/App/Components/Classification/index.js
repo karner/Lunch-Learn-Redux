@@ -13,7 +13,12 @@ class Classification extends Component {
       <div style={this.props.style}>
           <Card background='white' padding='16px' marginLeft='32px' width='300px' pointerEvents='auto' float='left'>
             <Heading>Classification</Heading>
-            <Combobox items={this.props.legends == undefined ? [] : this.props.legends.map(item => item.name)} placeholder='Legend'/>
+            <Combobox
+              items={this.props.legends == undefined ? [] : this.props.legends} 
+              onChange={selected => console.log(selected)}
+              itemToString={(item)=>(item == undefined)?"":item.name}
+              
+              placeholder='Legend'/>
           </Card>
       </div>
     );
