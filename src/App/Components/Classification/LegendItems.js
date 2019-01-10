@@ -14,7 +14,11 @@ class LegendItems extends Component {
                 </Button>
             );
         });
-        return(items);
+        return(
+            <div style={{maxHeight: '450px', overflowY: 'scroll'}}>
+                {items}
+            </div>
+            );
     };
 }
 
